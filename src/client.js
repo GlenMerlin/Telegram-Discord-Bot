@@ -3,7 +3,13 @@ const { resolve } = require("path");
 
 const Discord = require("discord.js");
 const parser = require("discord-command-parser");
-
+// TEST CONTENT
+const interactions = require("discord-slash-commands-client");
+const bot = new interactions.Client(
+	"Bot Token Here",
+	"your bots user id",
+);
+// END OF TEST CONTENT
 const loadMongo = require("./handlers/mongodb");
 
 const { prefix, token } = require("./.config.json");
@@ -23,6 +29,10 @@ client.once("ready", () => {
 	client.user.setActivity(`Use t.help for info`);
 });
 // Add code to make the bot run through a tutorial when it is first added to a server
+
+// EXPERIMENTAL CONTENT
+
+// END OF EXPERIMENTAL
 
 // Commands
 client.on("message", async (message) => {
